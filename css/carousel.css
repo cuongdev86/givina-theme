@@ -1,0 +1,74 @@
+.carousel-item img {
+    object-fit: contain;
+}
+
+.carousel-banner .item-owl {
+    max-height: 625px;
+    max-width: 625px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+
+.carousel-banner .owl-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel-banner .owl-item.cloned.active,
+.carousel-banner .owl-item.active {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+.carousel-banner .owl-item.active.center {
+    transform: scale(1);
+    opacity: 1;
+}
+.carousel-banner .owl-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-banner .owl-dot span {
+    width: 12px;
+    height: 12px;
+    background: var(--color-theme-2);
+    display: block;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.carousel-banner .owl-dot.active span {
+    background: var(--color-theme);
+}
+
+/* carousel-prolist */
+.carousel-prolist {
+    position: relative;
+}
+.carousel-prolist .owl-prev {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 39%;
+    left: 20px;
+    transform: translateY(-50%);
+    background-color: var(--color-theme) !important;
+    color: white !important;
+    padding: 5px;
+}
+.carousel-prolist .owl-next {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 39%;
+    right: -10px;
+    transform: translateY(-50%);
+    background-color: var(--color-theme) !important;
+    color: white !important;
+    padding: 5px;
+}
