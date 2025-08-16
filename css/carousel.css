@@ -12,7 +12,7 @@
 .carousel-banner .owl-item {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
+.carousel-banner .owl-item:not(.active.center),
 .carousel-banner .owl-item.cloned.active,
 .carousel-banner .owl-item.active {
     transform: scale(0.8);

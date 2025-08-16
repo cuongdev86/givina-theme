@@ -308,14 +308,14 @@
 @media (min-width: 992px) { 
     .product-item .product-image {
         height: 382px; 
-        padding: auto;
-        overflow: hidden;
-        box-shadow: 0px 5px 5px 7px #00000080;
+        /* padding: auto; */
+        /* overflow: hidden; */
+        /* box-shadow: 0px 5px 5px 7px #00000080; */
     }
 }
 
 @media (min-width: 1024px) {
     .product-item .product-image {
-        height: 302px;
+        height: 282px;
     }
 }

@@ -1,12 +1,16 @@
-@import url('loader.css');
-@import url('carousel.css');
-@import url('prolist.css');
-@import url('header.css');
-@import url('gallery.css');
+@import url("loader.css");
+@import url("carousel.css");
+@import url("prolist.css");
+@import url("header.css");
+@import url("gallery.css");
+@import url("breadcumb.css");
+@import url("dropdown.css");
+@import url("list.css");
+@import url("pagination.css");
 /* @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap'); */
 
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Vujahday+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+QLD:wght@100..400&family=Vujahday+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Vujahday+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+QLD:wght@100..400&family=Vujahday+Script&display=swap");
 
 :root {
     --color-theme: #ea5523;
@@ -17,8 +21,8 @@
     --line-header: 20px;
     --thickness-line-header: 1px;
 
-    --font-Vujahday: 'Vujahday Script', cursive;
-    --font-montserrat: 'Montserrat', sans-serif;
+    --font-Vujahday: "Vujahday Script", cursive;
+    --font-montserrat: "Montserrat", sans-serif;
 }
 
 * {
@@ -189,20 +193,3 @@ li {
     }
 }
 /* Media 1200px */
-
-.call-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    animation: shake 1s infinite;
-    border-radius: 50%;
-}
-
-@keyframes shake {
-    0%, 100% { transform: rotate(0deg); }
-    20% { transform: rotate(-20deg); }
-    40% { transform: rotate(20deg); }
-    60% { transform: rotate(-10deg); }
-    80% { transform: rotate(5deg); }
-}
-
