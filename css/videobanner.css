@@ -1,0 +1,5 @@
+#banner {
+    width: 100%;
+   /* max-height: calc(100vh - 181px);*/ /* 60px là chiều cao header */
+    /* object-fit: contain; */
+}

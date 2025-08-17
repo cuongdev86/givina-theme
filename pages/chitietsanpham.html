@@ -80,7 +80,7 @@
                                     <circle cx="11" cy="11" r="8" />
                                 </svg>
                             </button>
-                            <button class="px-1 px-lg-2 btn btn-sm btn-transparent rounded-pill text-white">
+                            <button class="px-1 px-lg-2 btn btn-sm btn-transparent rounded-pill text-white position-relative cart-btn">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -97,6 +97,7 @@
                                     <circle cx="19" cy="21" r="1" />
                                     <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
                                 </svg>
+                                <span class="position-absolute top-0 start-100 translate-middle badge border border-white text-danger rounded-pill bg-white cart-badge d-none">0</span>
                             </button>
                         </div>
                     </div>
@@ -153,7 +154,356 @@
         </header>
         <main>
             <div class="container my-3">
-                <div class="bg-light py-2">Hello</div>
+                <nav class="mb-4" aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-start">
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Quà tết</li>
+                    </ol>
+                </nav>
+                <div class="row g-2 mb-4">
+                    <div class="col-12 col-lg-6">
+                        <div class="h-100 p-2">
+                            <div class="row g-2">
+                                <!-- Danh sách ảnh nhỏ -->
+                                <div class="col-12 col-lg-2 order-1 order-lg-0">
+                                    <div class="d-flex flex-row flex-lg-column gap-2 product-image list product-thumbs">
+                                        <img
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1-1730043408.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1-1730043408.jpg"
+                                            alt=""
+                                            class="object-fit-contain img-fluid thumb active"
+                                        />
+
+                                        <img
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-2-1729783504.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-2-1729783504.jpg"
+                                            alt=""
+                                            class="object-fit-contain img-fluid thumb"
+                                        />
+
+                                        <img
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1730043408.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1730043408.jpg"
+                                            alt=""
+                                            class="object-fit-contain img-fluid thumb"
+                                        />
+                                        <img
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-2-1729783504.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-2-1729783504.jpg"
+                                            alt=""
+                                            class="object-fit-contain img-fluid thumb"
+                                        />
+
+                                        <img
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1730043408.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1730043408.jpg"
+                                            alt=""
+                                            class="object-fit-contain img-fluid thumb"
+                                        />
+                                        <img
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-2-1729783504.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-2-1729783504.jpg"
+                                            alt=""
+                                            class="object-fit-contain img-fluid thumb"
+                                        />
+
+                                        <img
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1730043408.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1730043408.jpg"
+                                            alt=""
+                                            class="object-fit-contain img-fluid thumb"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- Ảnh chính -->
+                                <div class="col-12 col-lg-10 order-0 order-lg-1">
+                                    <div class="position-relative">
+                                        <img
+                                            id="mainImage"
+                                            src="https://sonagift.vn/watermarks/600x600x2/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1-1730043408.jpg"
+                                            data-full="https://sonagift.vn/watermarks/1200x1200/upload/product/hop-banh-trung-thu-lam-nguyet-phu-quy-1-1730043408.jpg"
+                                            alt=""
+                                            class="object-fit-cover img-fluid"
+                                        />
+                                        <div class="position-absolute top-0 start-0">
+                                            <div class="p-2 m-2 rounded-1 bg-secondary text-white">Còn hàng</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="h-100 px-2 py-3 d-flex flex-column">
+                            <div class="flex-grow-1 mb-3">
+                                <h5 class="text-uppercase fw-bold mb-4">hộp bánh trung thu lam nguyệt phú quý</h5>
+                                <div class="d-flex gap-2 gap-lg-5 mb-3 flex-column flex-lg-row">
+                                    <div class="hstack gap-2">
+                                        <b class="text-muted">Đánh giá: </b>
+                                        <div id="assessment">
+                                            <i class="fa-solid fa-star text-warning" role="button"></i>
+                                            <i class="fa-solid fa-star text-warning" role="button"></i>
+                                            <i class="fa-solid fa-star text-warning" role="button"></i>
+                                            <i class="fa-solid fa-star text-warning" role="button"></i>
+                                            <i class="fa-regular fa-star" role="button"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <b class="text-muted">Tình trạng: </b>
+                                        <b class="text-danger">Hết hàng</b> /
+                                        <b class="text-success">Còn hàng</b>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mb-2"><span class="text-muted me-2">Lượt xem:</span> <span class=""> 111</span></div>
+                                    <div class="mb-2"><span class="text-muted me-2">Mã sản phẩm:</span> <span class=""> 01</span></div>
+                                    <div class="mb-2"><span class="text-muted me-2">Quy cách hộp:</span> <span class=""> Hộp 4 bánh + 1 trà</span></div>
+                                    <div class="mb-2"><span class="text-muted me-2">Chất liệu:</span> <span class=""> Hộp cứng cao cấp, công nghệ in offset, cán màng kim tuyến sang trọng hiện đại, nắp nam châm chắc chắn.</span></div>
+                                    <div class="mb-2"><span class="text-muted me-2">Kích thước:</span> <span class=""> 37 x 25 x 8cm</span></div>
+                                    <div class="mb-2"><b class="me-3">Giá:</b> <span class="text-danger fs-5 fw-bold">900.000 / Liên hệ</span></div>
+                                </div>
+                                <div class="hstack gap-2 flex-wrap">
+                                    <strong class="me-3">Mẫu: </strong>
+                                    <label for="qua1" class="check_groupSample"> <input type="checkbox" name="" id="qua1" hidden /> Tết phú quý 1 </label>
+                                    <label for="qua2" class="check_groupSample"> <input type="checkbox" name="" id="qua2" hidden /> Tết phú quý 2 </label>
+                                    <label for="qua3" class="check_groupSample"> <input type="checkbox" name="" id="qua3" hidden /> Tết phú quý 3 </label>
+                                    <label for="qua4" class="check_groupSample"> <input type="checkbox" name="" id="qua4" hidden /> Tết phú quý 4 </label>
+                                    <label for="qua5" class="check_groupSample"> <input type="checkbox" name="" id="qua5" hidden /> Tết phú quý 5 </label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <!-- <div class="hstack gap-3 mb-3">
+                                    <div class="btn-group qty-group" role="group" aria-label="Quantity">
+                                        <button type="button" class="btn btn-light fw-bold qty-minus">-</button>
+                                        <input type="text" class=" qty-input" value="1"  />
+                                        <button type="button" class="btn btn-light fw-bold qty-plus">+</button>
+                                    </div>
+                                    <button class=" add-to-cart">Thêm vào giỏ hàng</button>
+                                </div> -->
+                                <div class="product-item hstack gap-3 mb-3">
+                                    <div class="btn-group qty-group" role="group" aria-label="Quantity">
+                                        <button type="button" class="btn btn-light fw-bold qty-minus">-</button>
+                                        <input type="text" class="form-control form-control-sm bg-light border-0 shadow-none text-center fw-bold qty-input" value="1" style="max-width: 60px" />
+                                        <button type="button" class="btn btn-light fw-bold qty-plus">+</button>
+                                    </div>
+                                    <button class="btn btn-secondary flex-grow-1 rounded-1 fw-bold add-to-cart">Thêm vào giỏ hàng</button>
+                                </div>
+                                <button class="btn btn-outline-danger w-100 rounded-1 fw-bold fs-5">MUA NGAY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabcontent Thông tin chi tiết -->
+                <div class="hstack justify-content-center">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav_infoProduct" role="tablist">
+                            <button class="nav-link rounded-0 active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab" aria-controls="info" aria-selected="true">Thông tin sản phẩm</button>
+                            <button class="nav-link rounded-0" id="guide-tab" data-bs-toggle="tab" data-bs-target="#guide" type="button" role="tab" aria-controls="guide" aria-selected="false">Hướng dẫn</button>
+                            <button class="nav-link rounded-0" id="comments-tab" data-bs-toggle="tab" data-bs-target="#comments" type="button" role="tab" aria-controls="comments" aria-selected="false">Bình luận</button>
+                        </div>
+                    </nav>
+                </div>
+                <div class="tab-content" id="nav-tabProduct">
+                    <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab" tabindex="0">
+                        <div class="content-box" id="moreContent">
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <img src="https://sonagift.vn/upload/filemanager/files/H%E1%BB%99p%20b%C3%A1nh%20TT%20-%20Text-12.jpg" alt="" class="img-fluid" />
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                            <p>Đây là nội dung dài bị ẩn ban đầu. Khi nhấn "Xem thêm" thì nội dung này sẽ mở rộng ra.</p>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <button class="btn btn-outline-secondary btn-sm rounded-pill" onclick="moreContent(this)">Xem thêm</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="guide" role="tabpanel" aria-labelledby="guide-tab" tabindex="0">
+                        2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex laboriosam blanditiis commodi illo quaerat nam nesciunt error totam consequuntur cum in quidem praesentium similique sed excepturi nisi, suscipit sint
+                        impedit?
+                    </div>
+                    <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab" tabindex="0">
+                        3. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex laboriosam blanditiis commodi illo quaerat nam nesciunt error totam consequuntur cum in quidem praesentium similique sed excepturi nisi, suscipit sint
+                        impedit?
+                    </div>
+                </div>
+                <!-- Tabcontent Thông tin chi tiết -->
+
+                <!--  -->
+                <div class="container mt-4" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
+                    <h3 class="text-start mb-0 fw-bold text-uppercase">sản phẩm cùng loại</h3>
+                    <div class="row carousel-prolist owl-carousel">
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/qua-1.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/qua-2.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-3.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-4.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-2.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-3.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-4.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-2.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-3.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 py-4">
+                            <a href="#" class="product-item">
+                                <div class="product-image">
+                                    <img src="../images/product/balo-4.jpg" alt="" />
+                                    <div class="pro-group">
+                                        <button class="btn btn-theme"><i class="fa-solid fa-cart-plus"></i></button>
+                                        <button class="btn btn-theme"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h5>Sản phẩm 1</h5>
+                                    <p>Thông tin 1</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
             </div>
         </main>
 
@@ -200,5 +550,6 @@
         <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
 
         <script src="../js/handle.js"></script>
+        <script src="../js/view_product.js"></script>
     </body>
 </html>

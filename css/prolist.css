@@ -20,7 +20,7 @@
 .category-item .item-img {
     position: relative;
     width: 111px;
-    height: 111px; 
+    height: 111px;
 }
 .category-item .item-img::before {
     content: '';
@@ -206,6 +206,71 @@
     right: 1%;
     bottom: 1%;
 }
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5; /* màu nền xám nhạt */
+    border-radius: 6px;
+    padding: 4px 8px;
+}
+
+.quantity-control .btn-qty {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 12px;
+    cursor: pointer;
+    color: #333;
+}
+
+.quantity-control .btn-qty:hover {
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+
+.quantity-control .qty-value {
+    min-width: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+.product-image.list img {
+    max-width: 90px;
+}
+
+.product-thumbs {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    scrollbar-width: thin;
+    overscroll-behavior: contain;
+}
+
+@media (min-width: 992px) {
+    .product-thumbs {
+        flex-direction: column;
+        max-height: 520px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+.product-thumbs img {
+    cursor: pointer;
+    border: 4px solid transparent;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.product-thumbs img.active {
+    border-color: var(--color-theme);
+}
+
 /* Media queries dùng min-width */
 
 @media (min-width: 480px) {
@@ -267,6 +332,9 @@
     }
 }
 /* Design */
+.product-item {
+    position: relative;
+}
 
 .product-item .product-image {
     height: 155px;
@@ -274,13 +342,19 @@
     overflow: hidden;
     box-shadow: 0px 5px 5px 7px #00000080;
     border-radius: 22px;
+    position: relative;
 
-    transition: width 0.4s ease-in;
+    transition: all 0.4s ease-in;
 }
 .product-item .product-image img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    transform: scale(1);
+    transition: transform 0.2s linear;
+}
+.product-item .product-image:hover img {
+    transform: scale(1.1);
 }
 .product-content {
     display: flex;
@@ -290,6 +364,23 @@
     color: rgb(54, 54, 54);
 }
 
+.pro-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #3333334f;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    opacity: 0;
+}
+.product-item .product-image:hover .pro-group {
+    opacity: 1;
+}
 @media (min-width: 440px) {
     .product-item .product-image {
         height: 219px;
@@ -305,12 +396,9 @@
         height: 222px;
     }
 }
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
     .product-item .product-image {
-        height: 382px; 
-        /* padding: auto; */
-        /* overflow: hidden; */
-        /* box-shadow: 0px 5px 5px 7px #00000080; */
+        height: 382px;
     }
 }
 
@@ -318,4 +406,71 @@
     .product-item .product-image {
         height: 282px;
     }
+}
+
+/* Xử lý checkbox ở chi tiết sản phẩm */
+.check_groupSample {
+    position: relative;
+    border: 1px solid #8c9292;
+    border-radius: 2px;
+    padding: 4px 8px;
+    user-select: none;
+    transition: all 0.2s linear;
+}
+.check_groupSample:has(input:checked) {
+    border-color: var(--color-theme);
+    background: var(--color-theme-2);
+    color: var(--color-theme);
+    padding: 4px 28px 4px 8px;
+}
+.check_groupSample:has(input:checked)::after {
+    content: '✓';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-theme);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0px 8px;
+    /* border-radius: 3px; */
+}
+
+/* Xử lý nav thông tin product */
+#nav_infoProduct .nav-link {
+    color: var(--color-black);
+}
+#nav_infoProduct .nav-link.active,
+#nav_infoProduct .nav-link:hover {
+    color: var(--color-theme);
+}
+
+/* Xử lý moreContent */
+#nav-tabProduct .tab-pane {
+    padding: 1rem;
+}
+#moreContent {
+    max-height: 200px;
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in, overflow 1.5s linear;
+}
+#moreContent::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.418) 15%, rgba(255, 255, 255, 1) 100%);
+
+    pointer-events: none;
+}
+#moreContent.show::after {
+    display: none;
+}
+
+#moreContent.show {
+    max-height: 2000px;
+    overflow: hidden;
 }

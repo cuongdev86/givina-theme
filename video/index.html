@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <video id="banner" autoplay muted playsinline style="width: 100%">
+            <source src="video2.mp4" type="video/mp4" />
+        </video>
+
+        <script>
+            const video = document.getElementById('banner');
+
+            const firstEnd = 5; // lần đầu dừng ở giây 6
+            const loopStart = 5; // bắt đầu loop
+            const loopEnd = 8.3; // kết thúc loop
+            let firstPlayed = false;
+
+            video.addEventListener('timeupdate', function () {
+                if (!firstPlayed && video.currentTime >= firstEnd) {
+                    // hết lần phát đầu tiên
+                    firstPlayed = true;
+                    video.currentTime = loopStart;
+                    video.play();
+                } else if (firstPlayed && video.currentTime >= loopEnd) {
+                    // lặp đoạn 6 -> 8
+                    video.currentTime = loopStart;
+                    video.play();
+                }
+            });
+        </script>
+    </body>
+</html>
